@@ -1,0 +1,22 @@
+                      Prefix Verb   URI Pattern                        Controller#Action
+        new_customer_session GET    /customers/sign_in(.:format)       devise/sessions#new
+            customer_session POST   /customers/sign_in(.:format)       devise/sessions#create
+    destroy_customer_session DELETE /customers/sign_out(.:format)      devise/sessions#destroy
+           customer_password POST   /customers/password(.:format)      devise/passwords#create
+       new_customer_password GET    /customers/password/new(.:format)  devise/passwords#new
+      edit_customer_password GET    /customers/password/edit(.:format) devise/passwords#edit
+                             PATCH  /customers/password(.:format)      devise/passwords#update
+                             PUT    /customers/password(.:format)      devise/passwords#update
+cancel_customer_registration GET    /customers/cancel(.:format)        devise/registrations#cancel
+       customer_registration POST   /customers(.:format)               devise/registrations#create
+   new_customer_registration GET    /customers/sign_up(.:format)       devise/registrations#new
+  edit_customer_registration GET    /customers/edit(.:format)          devise/registrations#edit
+                             PATCH  /customers(.:format)               devise/registrations#update
+                             PUT    /customers(.:format)               devise/registrations#update
+                             DELETE /customers(.:format)               devise/registrations#destroy
+                       rooms GET    /rooms(.:format)                   rooms#index
+                             POST   /rooms(.:format)                   rooms#create
+                    new_room GET    /rooms/new(.:format)               rooms#new
+                        room GET    /rooms/:id(.:format)               rooms#show
+                        root GET    /                                  chat_rooms#index
+                                    /cable                             #<ActionCable::Server::Base:0x007f8ef40db300 @mutex=#<Monitor:0x007f8ef40db288 @mon_owner=nil, @mon_count=0, @mon_mutex=#<Thread::Mutex:0x007f8ef40db198>>, @pubsub=nil, @worker_pool=nil, @event_loop=nil, @remote_connections=nil, @connections=[]>
