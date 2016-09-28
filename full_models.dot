@@ -1,0 +1,13 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"ApplicationRecord" []
+	"Customer" [shape=Mrecord, label="{Customer|updated_at :datetime\lemail :varchar(255)\lencrypted_password :varchar(255)\lreset_password_token :varchar(255)\lreset_password_sent_at :datetime\lremember_created_at :datetime\lsign_in_count :int(11)\lcurrent_sign_in_at :datetime\llast_sign_in_at :datetime\lcurrent_sign_in_ip :varchar(255)\llast_sign_in_ip :varchar(255)\lcreated_at :datetime\lid :int(11)\l}"]
+	"Message" [shape=Mrecord, label="{Message|id :int(11)\lbody :text\lcustomer_id :int(11)\lroom_id :int(11)\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Room" [shape=Mrecord, label="{Room|id :int(11)\ltitle :varchar(255)\lcustomer_id :int(11)\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Customer" -> "Room" [arrowtail=odot, arrowhead=crow, dir=both color="#A74492"]
+	"Customer" -> "Message" [arrowtail=odot, arrowhead=crow, dir=both color="#EA1B2A"]
+	"ApplicationRecord" -> "Customer" [label="", arrowhead="none", arrowtail="onormal"]
+	"ApplicationRecord" -> "Message" [label="", arrowhead="none", arrowtail="onormal"]
+	"Room" -> "Message" [arrowtail=odot, arrowhead=crow, dir=both color="#BDC345"]
+	"ApplicationRecord" -> "Room" [label="", arrowhead="none", arrowtail="onormal"]
+}
